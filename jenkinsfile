@@ -13,8 +13,8 @@ pipeline {
         }
         stage('Run Container') {
             steps {
-                sh '/usr/local/bin/docker rm -f my-web || true'
-                sh '/usr/local/bin/docker run -d --name my-web -p 8888:80 my-web-cicd'
+                sh 'docker rm -f my-web || true'
+                sh 'docker run -d --name my-web -p 5000:5000 my-web-cicd'
             }
         }
     }
